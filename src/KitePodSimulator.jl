@@ -6,6 +6,9 @@ using KiteUtils, Parameters
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering, on_timer
 
+if ! isfile("./data/settings.yaml")
+    copy_settings()
+end
 const set = se()              
 
 @with_kw mutable struct KCUState{S}
