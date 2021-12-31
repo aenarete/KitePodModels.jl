@@ -9,7 +9,6 @@ a copy under a different name and change the name of the active configuration in
 The following parameters are used by this package:
 ```md
 kcu:
-    mass: 8.4                    # mass of the kite control unit   [kg]
     power2steer_dist: 1.3        #                                 [m]
     depower_drum_diameter: 0.069 #                                 [m]
     tape_thickness: 0.0006       #                                 [m]
