@@ -18,10 +18,12 @@ The geometric nonlinearity due to the change of the effectiv drum diameter of th
 
 - functions to initialize the simulator, to update the set values and to read the actual values
 - a function on_timer() that needs to be called once per time step
-- a function to convert the actual depower value into change of angle of attack is provided.
+- a function to convert the actual depower value into change of angle of attack
 
 ## Related
 - The application [KiteViewer](https://github.com/ufechner7/KiteViewer)
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
+
+**Documentation** [Stable Version](https://ufechner7.github.io/KitePodSimulator.jl/stable)
 
 Author: Uwe Fechner (uwe.fechner.msc@gmail.com)
