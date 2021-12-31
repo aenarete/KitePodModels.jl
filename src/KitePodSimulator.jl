@@ -6,14 +6,7 @@ using KiteUtils, Parameters
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering, on_timer
 
-@consts begin
-    set = se()              
-    TAPE_THICKNESS = 6e-4           # thickness of the depower tape [m]
-    V_DEPOWER  = 0.075            # max velocity of depowering in units per second (full range: 1 unit)
-    V_STEERING = 0.2              # max velocity of steering in units per second   (full range: 2 units)
-    DEPOWER_GAIN  = 3.0           # 3.0 means: more than 33% error -> full speed
-    STEERING_GAIN = 3.0
-end
+const set = se()              
 
 @with_kw mutable struct KCUState{S}
     set_depower::S =         set.depower_offset * 0.01
@@ -33,10 +26,10 @@ function calc_delta_l(rel_depower)
     while rotations > 0.0
          l_ro += u * π    
          rotations -= 1.0
-         u -= TAPE_THICKNESS
+         u -= set.tape_thickness
     end
     if rotations < 0.0
-         l_ro += (-(u + TAPE_THICKNESS) * rotations + u * (rotations + 1.0)) * π * rotations
+         l_ro += (-(u + set.tape_thickness) * rotations + u * (rotations + 1.0)) * π * rotations
     end
     return l_ro
 end
@@ -83,21 +76,21 @@ function get_steering(); return kcu_state.steering; end
 
 function on_timer(dt = 1.0 / se().sample_freq)
     # calculate the depower motor velocity
-    vel_depower = (kcu_state.set_depower - kcu_state.depower) * DEPOWER_GAIN
+    vel_depower = (kcu_state.set_depower - kcu_state.depower) * set.depower_gain
     # println("vel_depower: $(vel_depower)")
-    if vel_depower > V_DEPOWER
-        vel_depower = V_DEPOWER
-    elseif vel_depower < -V_DEPOWER
-        vel_depower = -V_DEPOWER
+    if vel_depower > set.v_depower
+        vel_depower = set.v_depower
+    elseif vel_depower < -set.v_depower
+        vel_depower = -set.v_depower
     end
     # update the position
     kcu_state.depower += vel_depower * dt
     # calculate the steering motor velocity
-    vel_steering = (kcu_state.set_steering - kcu_state.steering) * STEERING_GAIN
-    if vel_steering > V_STEERING
-        vel_steering = V_STEERING
-    elseif vel_steering < -V_STEERING
-        vel_steering = -V_STEERING
+    vel_steering = (kcu_state.set_steering - kcu_state.steering) * set.steering_gain
+    if vel_steering > set.v_steering
+        vel_steering = set.v_steering
+    elseif vel_steering < -set.v_steering
+        vel_steering = -set.v_steering
     end
     kcu_state.steering += vel_steering * dt
 end
