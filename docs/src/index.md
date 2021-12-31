@@ -15,6 +15,16 @@ Two P controllers are used.
 
 The geometric nonlinearity due to the change of the effectiv drum diameter of the drum with the depower tape is taken into account.
 
+## Installation
+
+Download [Julia 1.6](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
+```
+] add KiteUtils
+``` 
+at the Julia prompt.
+
+If you are using Windows, it is suggested to install git and bash, too. This is explained for example here: [Julia on Windows](https://github.com/ufechner7/KiteViewer/blob/main/doc/Windows.md) .
+
 ## Provides
 
 - functions to initialize the simulator, to update the set values and to read the actual values
