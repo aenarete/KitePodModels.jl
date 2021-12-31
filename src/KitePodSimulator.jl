@@ -37,8 +37,15 @@ function calc_delta_l(rel_depower)
     return l_ro
 end
 
-# calculate the change of the angle between the kite and the last tether segment [rad] as function of the
-# length increase of the depower line delta_l [m].
+
+"""
+    calc_alpha_depower(rel_depower)
+
+Calculate the change of the angle between the kite and the last tether segment [rad] as function of the
+actual rel_depower value. 
+
+Returns `nothing` in case of error.
+"""
 function calc_alpha_depower(rel_depower)
     a   =  set.power2steer_dist
     b_0 = set.height_b + 0.5 * set.height_k
@@ -74,6 +81,7 @@ function init_kcu()
     kcu_state.set_steering =        0.0
     kcu_state.depower =             set.depower_offset * 0.01   #    0 .. 1.0
     kcu_state.steering =            0.0                         # -1.0 .. 1.0
+    nothing
 end
 
 """
@@ -85,6 +93,7 @@ the value for steering between -1.0 and +1.0 .
 function set_depower_steering(depower, steering)
     kcu_state.set_depower  = depower
     kcu_state.set_steering = steering
+    nothing
 end
 
 """
@@ -102,7 +111,7 @@ Read the current depower value. Result will be between -1.0 and 1.0.
 function get_steering(); return kcu_state.steering; end
 
 """
-    function on_timer(dt = 1.0 / set.sample_freq)
+    on_timer(dt = 1.0 / set.sample_freq)
 
 Must be called at each clock tick. Parameter: Δt in seconds    
 Updates the current values of steering and depower depending
