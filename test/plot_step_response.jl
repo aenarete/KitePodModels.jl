@@ -32,3 +32,4 @@ plot(times, depower, layout=l, subplot=1, label = "depower", legend = :bottomrig
 plot!(times, depower_set, layout=l, subplot=1, label  = "depower_set")
 plot!(times, steering, layout=l, subplot=2, label = "steering", legend = :bottomright)
 plot!(times, steering_set, layout=l, subplot=2, label  = "steering_set")
+savefig("docs/src/step_response.png")

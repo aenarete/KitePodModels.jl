@@ -21,6 +21,9 @@ The geometric nonlinearity due to the change of the effectiv drum diameter of th
 - a function on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
 
+## Step response
+![Step Response](step_response.png "Title")
+
 Click on **Functions** on the left to see the exported functions.
 
 Author: Uwe Fechner (uwe.fechner.msc@gmail.com)
