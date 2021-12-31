@@ -1,3 +1,4 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 KitePodSimulator = "558fcde3-b420-4fcf-b6fa-fc874c7e75b7"
+KiteUtils = "90980105-b163-44e5-ba9f-8b1c83bb0533"
