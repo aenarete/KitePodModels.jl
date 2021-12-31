@@ -59,6 +59,13 @@ function calc_alpha_depower(rel_depower)
     end
 end
 
+"""
+    init_kcu()
+
+Inititalze the simulator. Must be called at the beginning of the simulation. The 
+actual and the set values of depower are initialized to set.depower_offset * 0.01,
+the actual and the set values of steering to zero. 
+"""
 function init_kcu()
     kcu_state.set_depower =         set.depower_offset * 0.01
     kcu_state.set_steering =        0.0
@@ -66,15 +73,39 @@ function init_kcu()
     kcu_state.steering =            0.0                         # -1.0 .. 1.0
 end
 
+"""
+    set_depower_steering(depower, steering)
+
+Set the values of depower and steering. The value for depower must be between 0.0 and 1.0,
+the value for steering between -1.0 and +1.0 .
+"""
 function set_depower_steering(depower, steering)
     kcu_state.set_depower  = depower
     kcu_state.set_steering = steering
 end
 
+"""
+    get_depower()
+
+Read the current depower value. Result will be between 0.0 and 1.0.
+"""
 function get_depower();  return kcu_state.depower;  end
+
+"""
+    get_steering()
+
+Read the current depower value. Result will be between -1.0 and 1.0.
+"""
 function get_steering(); return kcu_state.steering; end
 
-function on_timer(dt = 1.0 / se().sample_freq)
+"""
+    function on_timer(dt = 1.0 / set.sample_freq)
+
+Must be called at each clock tick. Parameter: Δt in seconds    
+Updates the current values of steering and depower depending
+on the set values and the last value.
+"""
+function on_timer(dt = 1.0 / set.sample_freq)
     # calculate the depower motor velocity
     vel_depower = (kcu_state.set_depower - kcu_state.depower) * set.depower_gain
     # println("vel_depower: $(vel_depower)")
@@ -93,6 +124,7 @@ function on_timer(dt = 1.0 / se().sample_freq)
         vel_steering = -set.v_steering
     end
     kcu_state.steering += vel_steering * dt
+    nothing
 end
 
 end
