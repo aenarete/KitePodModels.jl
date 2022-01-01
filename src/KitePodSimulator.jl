@@ -2,7 +2,7 @@
 
 module KitePodSimulator # better: KitePodModels
 
-using KiteUtils, Parameters
+using KiteUtils, KitePodSimulator, Parameters
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering, on_timer
 export KCU
@@ -11,6 +11,11 @@ if ! isfile("./data/settings.yaml")
     copy_settings()
 end   
 
+"""
+    mutable struct KCU
+
+Stuct that is storing the settings and the state of the kite control unit. 
+"""
 @with_kw mutable struct KCU
     set::Settings = se()
     set_depower::Float64 =         0.0
