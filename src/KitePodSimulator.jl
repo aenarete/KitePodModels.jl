@@ -25,10 +25,21 @@ Stuct that is storing the settings and the state of the kite control unit.
 end
 
 """
+    KCU(set::Settings)
+
+Constructor for KCU struct.
+"""
+function KCU(set::Settings)
+    kcu = KCU()
+    init_kcu(kcu, set)
+    return kcu
+end
+
+"""
     init_kcu(kcu::KCU, set::Settings)
 
-Inititalze the simulator. Must be called at the beginning of the simulation. The 
-actual and the set values of depower are initialized to set.depower_offset * 0.01,
+Inititalze the model of the kite control unit (KCU). 
+The actual and the set values of depower are initialized to set.depower_offset * 0.01,
 the actual and the set values of steering to zero. 
 """
 function init_kcu(kcu::KCU, set::Settings)
