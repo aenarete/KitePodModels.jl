@@ -1,32 +1,32 @@
 # Module for simulating the kite control unit (KCU).
 
-module KitePodSimulator
+module KitePodSimulator # better: KitePodModels
 
 using KiteUtils, Parameters
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering, on_timer
-export KCUState
+export KCU
 
 if ! isfile("./data/settings.yaml")
     copy_settings()
 end   
 
-@with_kw mutable struct KCUState
+@with_kw mutable struct KCU
+    set::Settings = se()
     set_depower::Float64 =         0.0
     set_steering::Float64 =        0.0
     depower::Float64 =             0.0                         #    0 .. 1.0
     steering::Float64 =            0.0                         # -1.0 .. 1.0
-    set::Settings = se()
 end
 
 """
-    init_kcu(kcu::KCUState, set::Settings)
+    init_kcu(kcu::KCU, set::Settings)
 
 Inititalze the simulator. Must be called at the beginning of the simulation. The 
 actual and the set values of depower are initialized to set.depower_offset * 0.01,
 the actual and the set values of steering to zero. 
 """
-function init_kcu(kcu::KCUState, set::Settings)
+function init_kcu(kcu::KCU, set::Settings)
     kcu.set = set
     kcu.set_depower =         set.depower_offset * 0.01
     kcu.set_steering =        0.0
@@ -37,7 +37,7 @@ end
 
 # Calculate the length increase of the depower line [m] as function of the relative depower
 # setting [0..1].
-function calc_delta_l(kcu::KCUState, rel_depower)
+function calc_delta_l(kcu::KCU, rel_depower)
     u = kcu.set.depower_drum_diameter
     l_ro = 0.0
     rotations = (rel_depower - 0.01 * kcu.set.depower_offset) * 10.0 * 11.0 / 3.0 * (3918.8 - 230.8) / 4096.
@@ -54,14 +54,14 @@ end
 
 
 """
-    calc_alpha_depower(kcu::KCUState, rel_depower)
+    calc_alpha_depower(kcu::KCU, rel_depower)
 
 Calculate the change of the angle between the kite and the last tether segment [rad] as function of the
 actual rel_depower value. 
 
 Returns `nothing` in case of error.
 """
-function calc_alpha_depower(kcu::KCUState, rel_depower)
+function calc_alpha_depower(kcu::KCU, rel_depower)
     a   =  kcu.set.power2steer_dist
     b_0 = kcu.set.height_b + 0.5 * kcu.set.height_k
     b = b_0 + 0.5 * calc_delta_l(kcu, rel_depower) # factor 0.5 due to the pulleys
@@ -85,40 +85,40 @@ function calc_alpha_depower(kcu::KCUState, rel_depower)
 end
 
 """
-    set_depower_steering(kcu::KCUState, depower, steering)
+    set_depower_steering(kcu::KCU, depower, steering)
 
 Set the values of depower and steering. The value for depower must be between 0.0 and 1.0,
 the value for steering between -1.0 and +1.0 .
 """
-function set_depower_steering(kcu::KCUState, depower, steering)
+function set_depower_steering(kcu::KCU, depower, steering)
     kcu.set_depower  = depower
     kcu.set_steering = steering
     nothing
 end
 
 """
-    get_depower(kcu::KCUState)
+    get_depower(kcu::KCU)
 
 Read the current depower value. Result will be between 0.0 and 1.0.
 """
-function get_depower(kcu::KCUState);  return kcu.depower;  end
+function get_depower(kcu::KCU);  return kcu.depower;  end
 
 """
-    get_steering(kcu::KCUState)
+    get_steering(kcu::KCU)
 
 Read the current depower value. Result will be between -1.0 and 1.0.
 """
-function get_steering(kcu::KCUState); return kcu.steering; end
+function get_steering(kcu::KCU); return kcu.steering; end
 
 """
-    on_timer(kcu::KCUState, dt = 0.0)
+    on_timer(kcu::KCU, dt = 0.0)
 
 Must be called at each clock tick. Parameter: Δt in seconds    
 Updates the current values of steering and depower depending
 on the set values and the last value.
 If dt == 0.0, then it will be set to 1.0 / kcu.set.sample_freq .
 """
-function on_timer(kcu::KCUState, dt = 0.0)
+function on_timer(kcu::KCU, dt = 0.0)
     if dt == 0.0
         dt = 1.0 / kcu.set.sample_freq
     end

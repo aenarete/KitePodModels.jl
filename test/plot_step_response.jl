@@ -5,7 +5,7 @@ cd("..")
 const t_end = 10.0 # simulation time
 const dt = 1.0 / se().sample_freq
 
-kcu = KCUState()
+kcu = KCU()
 init_kcu(kcu, se())
 
 const times = Float64[]

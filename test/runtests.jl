@@ -4,7 +4,7 @@ using Test
 include("plot_step_response.jl")
 
 @testset "KitePodSimulator.jl" begin
-    kcu = KCUState()
+    kcu = KCU()
     init_kcu(kcu, se())
     @test get_depower(kcu) ≈ 0.236
     @test get_steering(kcu) ≈ 0.0
