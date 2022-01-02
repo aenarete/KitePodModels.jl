@@ -22,6 +22,7 @@ The geometric nonlinearity due to the change of the effectiv drum diameter of th
 
 ## Related
 - The application [KiteViewer](https://github.com/ufechner7/KiteViewer)
+- the package [KiteModels](https://github.com/ufechner7/KiteModels.jl)
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
 
 **Documentation** [Stable Version](https://ufechner7.github.io/KitePodSimulator.jl/stable)
