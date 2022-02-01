@@ -17,7 +17,7 @@ end
 Stuct that is storing the settings and the state of the kite control unit. 
 """
 @with_kw mutable struct KCU
-    set::Settings = se()
+    set::KiteUtils.Settings = se()
     set_depower::Float64 =         0.0
     set_steering::Float64 =        0.0
     depower::Float64 =             0.0                         #    0 .. 1.0
@@ -25,24 +25,24 @@ Stuct that is storing the settings and the state of the kite control unit.
 end
 
 """
-    KCU(set::Settings)
+    KCU(set::KiteUtils.Settings)
 
 Constructor for KCU struct.
 """
-function KCU(set::Settings)
+function KCU(set::KiteUtils.Settings)
     kcu = KCU()
     init_kcu(kcu, set)
     return kcu
 end
 
 """
-    init_kcu(kcu::KCU, set::Settings)
+    init_kcu(kcu::KCU, set::KiteUtils.Settings)
 
 Inititalze the model of the kite control unit (KCU). 
 The actual and the set values of depower are initialized to set.depower_offset * 0.01,
 the actual and the set values of steering to zero. 
 """
-function init_kcu(kcu::KCU, set::Settings)
+function init_kcu(kcu::KCU, set::KiteUtils.Settings)
     kcu.set = set
     kcu.set_depower =         set.depower_offset * 0.01
     kcu.set_steering =        0.0
