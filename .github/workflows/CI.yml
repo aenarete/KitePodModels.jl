@@ -69,6 +69,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using KiteUtils
-            DocMeta.setdocmeta!(KiteUtils, :DocTestSetup, :(using KiteUtils); recursive=true)
-            doctest(KiteUtils)'
+            using KitePodModels
+            DocMeta.setdocmeta!(KitePodModels, :DocTestSetup, :(using KitePodModels); recursive=true)
+            doctest(KitePodModels)'
