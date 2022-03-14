@@ -2,8 +2,8 @@
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://aenarete.github.io/KitePodModels.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://aenarete.github.io/KitePodModels.jl/dev)
-[![Build Status](https://github.com/ufechner7/KitePodSimulator.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/ufechner7/KitePodSimulator.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/aenarete/KitePodModels.jl)
+[![Build Status](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/aenarete/KitePodModels.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/aenarete/KitePodModels.jl)
 
 ## Background
 A kite pod or kite control unit consists of one or two electric miniatur winches, that pull on two or three lines (attached to the kite) and allow to steer the kite and to change the angle of attack and thus the lift.

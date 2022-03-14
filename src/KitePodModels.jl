@@ -80,7 +80,7 @@ Returns `nothing` in case of error.
 function calc_alpha_depower(kcu::KCU, rel_depower)
     a   =  kcu.set.power2steer_dist
     b_0 = kcu.set.h_bridle + 0.5 * kcu.set.height_k
-    b = b_0 + 0.5 * calc_delta_l(kcu, rel_depower) # factor 0.5 due to the pulleys
+    b   = b_0 + 0.5 * calc_delta_l(kcu, rel_depower) # factor 0.5 due to the pulleys
 
     c = sqrt(a * a + b_0 * b_0)
     # print 'a, b, c:', a, b, c, rel_depower
