@@ -16,7 +16,7 @@ The geometric nonlinearity due to the change of the effectiv drum diameter of th
 
 ## Provides
 
-- functions to initialize the simulator, to update the set values and to read the actual values
+- functions to initialize the model, to update the set values and to read the actual values
 - a function on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
 

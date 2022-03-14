@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = KitePodSimulator
+CurrentModule = KitePodModels
 ```
 ## Configuration
 To configure the parameters of the KitePodSimulator, edit the file data/settings.yaml , or create

@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = KitePodSimulator
+CurrentModule = KitePodModels
 ```
 
 ## Initialization and update

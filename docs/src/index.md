@@ -1,10 +1,10 @@
 ```@meta
-CurrentModule = KitePodSimulator
+CurrentModule = KitePodModels
 ```
 
-# KitePodSimulator
+# KitePodModels
 
-Documentation for [KitePodSimulator](https://github.com/ufechner7/KitePodSimulator.jl).
+Documentation for [KitePodModels](https://github.com/aenarete/KitePodModels.jl).
 
 ## Background
 A kite pod or kite control unit consists of one or two electric miniatur winches, that pull on two or three lines (attached to the kite) and allow to steer the kite and to change the angle of attack and thus the lift.
