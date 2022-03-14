@@ -1,4 +1,4 @@
-# KitePodSimulator
+# KitePodMoels
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ufechner7.github.io/KitePodSimulator.jl/stable)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ufechner7.github.io/KitePodSimulator.jl/dev)
