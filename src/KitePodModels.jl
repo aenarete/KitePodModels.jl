@@ -1,8 +1,8 @@
 # Module for simulating the kite control unit (KCU).
 
-module KitePodSimulator # better: KitePodModels
+module KitePodModels
 
-using KiteUtils, KitePodSimulator, Parameters
+using KiteUtils, Parameters
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering, on_timer
 export KCU

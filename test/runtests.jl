@@ -1,9 +1,9 @@
-using KitePodSimulator, KiteUtils
+using KitePodModels, KiteUtils
 using Test
 
 include("plot_step_response.jl")
 
-@testset "KitePodSimulator.jl" begin
+@testset "KitePodModels.jl" begin
     kcu = KCU(se())
     @test get_depower(kcu) ≈ 0.236
     @test get_steering(kcu) ≈ 0.0

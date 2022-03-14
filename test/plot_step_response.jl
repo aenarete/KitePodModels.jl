@@ -1,5 +1,5 @@
 ENV["GKSwstype"]="nul"
-using KitePodSimulator, KiteUtils, Plots
+using KitePodModels, KiteUtils, Plots
 
 cd("..")
 
