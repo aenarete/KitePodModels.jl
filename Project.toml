@@ -11,6 +11,7 @@ Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
 
 [compat]
 DocStringExtensions = "0.8"
+Documenter = "0.27"
 KiteUtils = "0.2.5, 0.2.6, 0.3.0"
 Parameters = "0.12"
 julia = "1.6, 1.7"
