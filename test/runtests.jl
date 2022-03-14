@@ -11,5 +11,7 @@ include("plot_step_response.jl")
     on_timer(kcu)
     @test get_depower(kcu) ≈ 0.23975
     @test get_steering(kcu) ≈ 0.01
+    @test calc_alpha_depower(kcu, se().depower_offset/100.0) ≈ 0.0
+    @test rad2deg(calc_alpha_depower(kcu, 0.37)) ≈ 20.499517119485063
 end
 
