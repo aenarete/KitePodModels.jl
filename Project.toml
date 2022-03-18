@@ -1,7 +1,7 @@
 name = "KitePodModels"
 uuid = "9de5dc81-f971-414a-927b-652b2f41c539"
 authors = ["Uwe Fechner <uwe.fechner.msc@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
@@ -10,7 +10,7 @@ Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
 
 [compat]
 DocStringExtensions = "0.8"
-KiteUtils = "0.2.5, 0.2.6, 0.3.0"
+KiteUtils = "0.2.5, 0.2.6, 0.3.0, 0.3.1"
 Parameters = "0.12"
 julia = "1.6, 1.7"
 
