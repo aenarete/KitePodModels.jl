@@ -4,6 +4,7 @@ using Test
 include("plot_step_response.jl")
 
 @testset "KitePodModels.jl" begin
+    KiteUtils.set_data_path("")
     kcu = KCU(se())
     @test get_depower(kcu) ≈ 0.236
     @test get_steering(kcu) ≈ 0.0
