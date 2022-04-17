@@ -2,7 +2,9 @@
 
 module KitePodModels
 
-using KiteUtils, Parameters, DocStringExtensions
+using Reexport
+@reexport using KiteUtils
+using Parameters, DocStringExtensions
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering, on_timer
 export KCU

@@ -1,4 +1,4 @@
-using KitePodModels, KiteUtils
+using KitePodModels
 using Test
 
 KiteUtils.set_data_path("")
