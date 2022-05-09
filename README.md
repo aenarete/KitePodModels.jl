@@ -14,17 +14,34 @@ Two P controllers are used.
 
 The geometric nonlinearity due to the change of the effectiv drum diameter of the drum with the depower tape is taken into account.
 
-## Provides
+## Installation
+Download [Julia 1.6](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
+```
+] add KitePodSimulator
+``` 
+at the Julia prompt.
 
+If you are using Windows, it is suggested to install git and bash, too. This is explained for example here: [Julia on Windows](https://github.com/ufechner7/KiteViewer/blob/main/doc/Windows.md) .
+
+## Testing
+You can run the unit test suite with the following command:
+```
+] test KitePodSimulator
+```
+
+## Provides
 - functions to initialize the model, to update the set values and to read the actual values
 - a function on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
 
 ## Related
 - The application [KiteViewer](https://github.com/ufechner7/KiteViewer)
-- the package [KiteModels](https://github.com/ufechner7/KiteModels.jl)
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
+- the package [KiteModels](https://github.com/ufechner7/KiteModels.jl)
+- the package [KiteViewers](https://github.com/aenarete/KiteViewers.jl)
+- the package [AtmosphericModels](https://github.com/aenarete/AtmosphericModels.jl)
+- the package [KiteControllers](https://github.com/aenarete/KiteControllers.jl)
 
-**Documentation** [Stable Version](https://aenarete.github.io/KitePodModels.jl/stable)
+**Documentation** [Stable Version](https://aenarete.github.io/KitePodModels.jl/stable) [Development Version](https://aenarete.github.io/KitePodModels.jl/dev)
 
 Author: Uwe Fechner (uwe.fechner.msc@gmail.com)
