@@ -17,7 +17,7 @@ The geometric nonlinearity due to the change of the effectiv drum diameter of th
 ## Installation
 Download [Julia 1.6](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
 ```
-] add KitePodSimulator
+] add KitePodModels
 ``` 
 at the Julia prompt.
 
@@ -26,7 +26,7 @@ If you are using Windows, it is suggested to install git and bash, too. This is 
 ## Testing
 You can run the unit test suite with the following command:
 ```
-] test KitePodSimulator
+] test KitePodModels
 ```
 
 ## Provides
