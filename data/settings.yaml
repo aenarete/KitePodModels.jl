@@ -1,16 +1,26 @@
 system:
     log_file: "data/log_8700W_8ms" # filename without extension  [replay only]
+                                   #   use / as path delimiter, even on Windows 
     time_lapse:   1.0              # relative replay speed
     sim_time:   100.0              # simulation time             [sim only]
     segments:       6              # number of tether segments
     sample_freq:   20              # sample frequency in Hz
     zoom:        0.03              # zoom factor for the system view
+    kite_scale:   3.5              # relative zoom factor for the 4 point kite
     fixed_font: ""                 # name or filepath+filename of alternative fixed pitch font
 
 initial:
-    l_tether: 392.0        # initial tether length       [m]
+    l_tether: 150.0        # initial tether length       [m]
     elevation: 70.7        # initial elevation angle   [deg]
     v_reel_out: 0.0        # initial reel out speed    [m/s]
+    depower:   25.0        # initial depower settings    [%]
+
+solver:
+    abs_tol: 0.0006        # absolute tolerance of the DAE solver [m, m/s]
+    rel_tol: 0.001         # relative tolerance of the DAE solver [-]
+    linear_solver: "GMRES" # can be GMRES or Dense
+    max_order: 4           # maximal order, usually between 3 and 5
+    max_iter:  200         # max number of iterations of the steady-state-solver
 
 steering:
     c0:       0.0          # steering offset   -0.0032           [-]
@@ -27,6 +37,7 @@ depower:
 kite:
     model: "data/kite.obj" # 3D model of the kite
     physical_model: "KPS4" # name of the kite model to use (KPS3 or KPS4)
+    version: 1             # version of the model to use
     mass:  6.2             # kite mass incl. sensor unit [kg]
     area: 10.18            # projected kite area         [m²]
     rel_side_area: 30.6    # relative side area           [%]
@@ -66,6 +77,7 @@ tether:
     c_spring: 614600.0     # unit spring constant coefficient [N]
     rho_tether:  724.0     # density of Dyneema           [kg/m³]
     e_tether: 55000000000.0 # axial tensile modulus of Dyneema (M.B. Ruppert) [Pa]
+                           # SK75: 109 to 132 GPa according to datasheet
 
 environment:
     v_wind: 9.51             # wind speed at reference height          [m/s]
@@ -74,7 +86,7 @@ environment:
     height_gnd: 0.0          # height of groundstation above see level [m]
     h_ref:  6.0              # reference height for the wind speed     [m]
 
-    rho_0:  1.225            # air density at the ground or zero       [kg/m³]
+    rho_0:  1.225            # air density at zero height and 15 °C    [kg/m³]
     alpha:  0.08163          # exponent of the wind profile law
     z0:     0.0002           # surface roughness                       [m]
     profile_law: 3           # 1=EXP, 2=LOG, 3=EXPLOG
