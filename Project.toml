@@ -10,7 +10,7 @@ Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 
 [compat]
-DocStringExtensions = "0.8"
+DocStringExtensions = "0.8, 0.9"
 KiteUtils = "0.4"
 Parameters = "0.12"
 Reexport = "1.2"
