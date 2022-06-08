@@ -5,6 +5,11 @@
 [![Build Status](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/aenarete/KitePodModels.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/aenarete/KitePodModels.jl)
 
+Models of control pods for kite power systems.
+
+This package is part of Julia Kite Power Tools, which consist of the following packages:
+<p align="center"><img src="./docs/kite_power_tools.png" width="500" /></p>
+
 ## Background
 A kite pod or kite control unit consists of one or two electric miniatur winches, that pull on two or three lines (attached to the kite) and allow to steer the kite and to change the angle of attack and thus the lift.
 
@@ -22,8 +27,6 @@ pkg"add KitePodModels"
 ``` 
 at the Julia prompt.
 
-If you are using Windows, it is suggested to install git and bash, too. This is explained for example here: [Julia on Windows](https://github.com/ufechner7/KiteViewer/blob/main/doc/Windows.md) .
-
 ## Testing
 You can run the unit test suite with the following command:
 ```julia
@@ -32,11 +35,11 @@ pkg"test KitePodModels"
 
 ## Provides
 - functions to initialize the model, to update the set values and to read the actual values
-- a function on_timer() that needs to be called once per time step
+- a function KitePodModels.on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
 
 ## Related
-- The application [KiteViewer](https://github.com/ufechner7/KiteViewer)
+- The meta-package  [KiteSimulators](https://github.com/aenarete/KiteSimulators.jl)
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
 - the packages [KiteModels](https://github.com/ufechner7/KiteModels.jl) and [WinchModels](https://github.com/aenarete/WinchModels.jl) and [AtmosphericModels](https://github.com/aenarete/AtmosphericModels.jl)
 - the packages [KiteControllers](https://github.com/aenarete/KiteControllers.jl) and[KiteViewers](https://github.com/aenarete/KiteViewers.jl)
