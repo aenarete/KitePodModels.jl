@@ -26,7 +26,7 @@ for step in 1:Int(round(t_end/dt))
         push!(steering_set, 0.5)
     end
     push!(times, time)
-    on_timer(kcu)
+    KitePodModels.on_timer(kcu)
     push!(depower, get_depower(kcu))
     push!(steering, get_steering(kcu))
 end
