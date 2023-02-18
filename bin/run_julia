@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ $(basename $(pwd)) == "bin" ]]; then
+    cd ..
+fi
+
+julia --project
