@@ -4,7 +4,7 @@ module KitePodModels
 
 using Reexport
 @reexport using KiteUtils
-using Parameters, DocStringExtensions
+using DocStringExtensions
 
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering
 export KCU
@@ -18,7 +18,7 @@ end
 
 Stuct that is storing the settings and the state of the kite control unit. 
 """
-@with_kw mutable struct KCU
+Base.@kwdef mutable struct KCU
     set::KiteUtils.Settings = se()
     set_depower::Float64 =         0.0
     set_steering::Float64 =        0.0
