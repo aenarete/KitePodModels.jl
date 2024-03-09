@@ -20,7 +20,7 @@ Two P controllers are used.
 The geometric nonlinearity due to the change of the effectiv drum diameter of the drum with the depower tape is taken into account.
 
 ## Installation
-Download [Julia 1.6](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
+Download [Julia 1.9](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
 ```julia
 using Pkg
 pkg"add KitePodModels"
