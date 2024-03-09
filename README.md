@@ -17,7 +17,7 @@ This software acts as controller: It has two inputs, the set values, and two out
 
 Two P controllers are used. 
 
-The geometric nonlinearity due to the change of the effectiv drum diameter of the drum with the depower tape is taken into account.
+The geometric nonlinearity due to the change of the effective drum diameter of the drum with the depower tape is taken into account.
 
 ## Installation
 Download [Julia 1.9](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
