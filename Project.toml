@@ -1,7 +1,7 @@
 name = "KitePodModels"
 uuid = "9de5dc81-f971-414a-927b-652b2f41c539"
 authors = ["Uwe Fechner <uwe.fechner.msc@gmail.com> and contributors"]
-version = "0.2.1"
+version = "0.3.0"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
@@ -10,9 +10,9 @@ Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
 
 [compat]
 DocStringExtensions = "0.8, 0.9"
-KiteUtils = "0.4"
+KiteUtils = "0.5"
 Reexport = "1.2"
-julia = "1.6, 1.7, 1.8"
+julia = "1.9, 1.10"
 
 [extras]
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
