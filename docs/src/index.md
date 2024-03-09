@@ -16,7 +16,7 @@ Two P controllers are used.
 The geometric nonlinearity due to the change of the effectiv drum diameter of the drum with the depower tape is taken into account.
 
 ## Installation
-Download [Julia 1.6](http://www.julialang.org) or later, if you haven't already. You can add KitePodModels from  Julia's package manager, by typing 
+Download [Julia 1.9](http://www.julialang.org) or later, if you haven't already. You can add KitePodModels from  Julia's package manager, by typing 
 ```julia
 using Pkg
 pkg"add KitePodModels"
@@ -42,7 +42,7 @@ pkg"test KitePodModels"
 Click on **Functions** on the left to see the exported functions.
 
 ## Related
-- The application [KiteViewer](https://github.com/ufechner7/KiteViewer)
+- The meta package [KiteSimulators](https://github.com/aenarete/KiteSimulators.jl) which contains all packages from Julia Kite Power Tools.
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
 - the packages [KiteModels](https://github.com/ufechner7/KiteModels.jl) and [WinchModels](https://github.com/aenarete/WinchModels.jl) and [AtmosphericModels](https://github.com/aenarete/AtmosphericModels.jl)
 - the packages [KiteControllers](https://github.com/aenarete/KiteControllers.jl) and[KiteViewers](https://github.com/aenarete/KiteViewers.jl)
