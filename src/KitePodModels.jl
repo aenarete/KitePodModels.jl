@@ -9,7 +9,7 @@ using DocStringExtensions
 export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering
 export KCU
 
-if ! isfile("./data/settings.yaml")
+if ! isfile(joinpath(get_data_path(), "settings.yaml"))
     copy_settings()
 end   
 
