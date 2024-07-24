@@ -20,7 +20,7 @@ Two P controllers are used.
 The geometric nonlinearity due to the change of the effective drum diameter of the drum with the depower tape is taken into account.
 
 ## Installation
-Download [Julia 1.9](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
+Download [Julia 1.10](http://www.julialang.org) or later, if you haven't already. You can add KiteUtils from  Julia's package manager, by typing 
 ```julia
 using Pkg
 pkg"add KitePodModels"
@@ -34,9 +34,15 @@ pkg"test KitePodModels"
 ```
 
 ## Provides
-- functions to initialize the model, to update the set values and to read the actual values
+- functions to initialize the model, update the set values and read the actual values
 - a function KitePodModels.on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
+
+## Licence
+This project is licensed under the MIT License. Please see the below WAIVER in association with the license.
+
+## WAIVER
+Technische Universiteit Delft hereby disclaims all copyright interest in the package “KitePodModels.jl” (models for airborne wind energy systems) written by the Author(s).
 
 ## Related
 - The meta-package  [KiteSimulators](https://github.com/aenarete/KiteSimulators.jl)
