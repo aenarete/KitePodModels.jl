@@ -31,7 +31,7 @@ end
 
 Constructor for KCU struct.
 """
-function KCU(set::KiteUtils.Settings)
+function KCU(set=set)
     kcu = KCU(set = set)
     init_kcu!(kcu, set)
     return kcu
