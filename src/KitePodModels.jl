@@ -31,7 +31,7 @@ end
 
 Constructor for KCU struct.
 """
-function KCU(set=set)
+function KCU(set)
     kcu = KCU(set = set)
     init_kcu!(kcu, set)
     return kcu
