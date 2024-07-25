@@ -4,7 +4,7 @@ CurrentModule = KitePodModels
 
 ## Initialization and update
 ```@docs
-init_kcu(kcu::KCU, set::KiteUtils.Settings)
+init_kcu!(kcu::KCU, set::KiteUtils.Settings)
 on_timer(kcu::KCU, dt = 0.0)
 ```
 
