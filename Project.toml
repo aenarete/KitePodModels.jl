@@ -1,7 +1,7 @@
 name = "KitePodModels"
 uuid = "9de5dc81-f971-414a-927b-652b2f41c539"
 authors = ["Uwe Fechner <uwe.fechner.msc@gmail.com> and contributors"]
-version = "0.3.2"
+version = "0.3.3"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
