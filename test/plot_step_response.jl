@@ -1,5 +1,5 @@
 ENV["GKSwstype"]="nul"
-using KitePodModels, Plots
+using KitePodModels, ControlPlots
 
 cd("..")
 
@@ -30,11 +30,13 @@ for step in 1:Int(round(t_end/dt))
     push!(depower, get_depower(kcu))
     push!(steering, get_steering(kcu))
 end
-l = @layout([a; b])
-plot(times, depower, layout=l, subplot=1, label = "depower", legend = :bottomright)
-plot!(times, depower_set, layout=l, subplot=1, label  = "depower_set")
-plot!(times, steering, layout=l, subplot=2, label = "steering", legend = :bottomright)
-plot!(times, steering_set, layout=l, subplot=2, label  = "steering_set")
+# l = @layout([a; b])
+# plot(times, depower, layout=l, subplot=1, label = "depower", legend = :bottomright)
+# plot!(times, depower_set, layout=l, subplot=1, label  = "depower_set")
+# plot!(times, steering, layout=l, subplot=2, label = "steering", legend = :bottomright)
+# plot!(times, steering_set, layout=l, subplot=2, label  = "steering_set")
+plotx(times, [depower, depower_set], [steering, steering_set]; ylabels=["depower","steering"], 
+      labels=[["depower","depower_set"], ["steering", "steering_set"]], fig="step_response")
 # This could become an example script, but a test should not write to this directory
 # savefig("docs/src/step_response.png")
 # println("Saved step response in docs/src/step_response.png !")
