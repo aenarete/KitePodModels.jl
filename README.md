@@ -42,6 +42,7 @@ pkg"test KitePodModels"
 - depower: a value between 0% and 100%; zero corresponds to the power line being fully reeled-in
 - rel_depower: a value between 0.0 and 1.0
 - depower_offset: 23.6   # at rel_depower=0.236 the kite is fully powered [%]
+- alpha_depower: the change of the angle between the kite and the last tether segment [rad]
 
 ## Licence
 This project is licensed under the MIT License. Please see the below WAIVER in association with the license.
