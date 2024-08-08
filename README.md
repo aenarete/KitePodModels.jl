@@ -38,6 +38,11 @@ pkg"test KitePodModels"
 - a function KitePodModels.on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
 
+## Nomenclature
+- depower: a value between 0% and 100%; zero corresponds to the power line being fully reeled-in
+- rel_depower: a value between 0.0 and 1.0
+- depower_offset: 23.6   # at rel_depower=0.236 the kite is fully powered [%]
+
 ## Licence
 This project is licensed under the MIT License. Please see the below WAIVER in association with the license.
 
