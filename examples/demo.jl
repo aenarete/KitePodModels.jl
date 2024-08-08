@@ -2,7 +2,7 @@ using Pkg
 if ! ("ControlPlots" ∈ keys(Pkg.project().dependencies))
     using TestEnv; TestEnv.activate()
 end
-using KitePodModels, ControlPlots
+using KitePodModels, ControlPlots, LaTeXStrings
 
 const t_end = 10.0 # simulation time
 const dt = 1.0 / se().sample_freq
@@ -24,7 +24,7 @@ function plot_alpha_depower(kcu; rel_depower_min=0.22, rel_depower_max=0.60)
     for i in eachindex(α)
         α[i] = calc_alpha_depower(kcu, rel_depower[i])
     end
-    plot(rel_depower, rad2deg.(α); ylabel="α [°]", xlabel="rel_depower", fig="α = f(rel_depower)")  
+    plot(rel_depower, rad2deg.(α); ylabel=L"α_{depower}~[°]", xlabel="rel_depower", fig="α = f(rel_depower)")  
 end 
 
 plot_alpha_depower(kcu)
