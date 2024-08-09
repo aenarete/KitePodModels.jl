@@ -10,8 +10,8 @@ t_end = 10.0               # simulation time
 dt = 1.0 / set.sample_freq # sampling time
 kcu = KCU(set)
 
-rel_depower_min = 0.22
-rel_depower_max = 0.60
+rel_depower_min = 0.38
+rel_depower_max = 0.62
 α_min = calc_alpha_depower(kcu, rel_depower_min)
 α_max = calc_alpha_depower(kcu, rel_depower_max)
 # Calculate the change of the angle between the kite and the last tether segment [rad] 
@@ -19,7 +19,7 @@ rel_depower_max = 0.60
 # println("α_min = $(rad2deg(α_min)), α_max = $(rad2deg(α_max))")
 
 # plot alpha_depower as function of rel_depower
-function plot_alpha_depower(kcu; rel_depower_min=0.22, rel_depower_max=0.60)
+function plot_alpha_depower(kcu; rel_depower_min, rel_depower_max)
     rel_depower = range(rel_depower_min, rel_depower_max, length=100)
     α = zeros(length(rel_depower))
     for i in eachindex(α)
@@ -28,4 +28,4 @@ function plot_alpha_depower(kcu; rel_depower_min=0.22, rel_depower_max=0.60)
     plot(rel_depower, rad2deg.(α); ylabel=L"α_{depower}~[°]", xlabel="rel_depower", fig="KCU2")  
 end 
 
-plot_alpha_depower(kcu)
+plot_alpha_depower(kcu; rel_depower_min, rel_depower_max)

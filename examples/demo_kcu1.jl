@@ -19,7 +19,7 @@ rel_depower_max = 0.60
 # println("α_min = $(rad2deg(α_min)), α_max = $(rad2deg(α_max))")
 
 # plot alpha_depower as function of rel_depower
-function plot_alpha_depower(kcu; rel_depower_min=0.22, rel_depower_max=0.60)
+function plot_alpha_depower(kcu; rel_depower_min, rel_depower_max)
     rel_depower = range(rel_depower_min, rel_depower_max, length=100)
     α = zeros(length(rel_depower))
     for i in eachindex(α)
@@ -28,4 +28,4 @@ function plot_alpha_depower(kcu; rel_depower_min=0.22, rel_depower_max=0.60)
     plot(rel_depower, rad2deg.(α); ylabel=L"α_{depower}~[°]", xlabel="rel_depower", fig="KCU1")  
 end 
 
-plot_alpha_depower(kcu)
+plot_alpha_depower(kcu; rel_depower_min, rel_depower_max)
