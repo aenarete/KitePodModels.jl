@@ -1,20 +1,20 @@
 using Pkg
-if ! haskey(Pkg.installed(), "ControlPlots")
+if ! ("ControlPlots" ∈ keys(Pkg.project().dependencies))
     using TestEnv; TestEnv.activate()
 end
 using KitePodModels, ControlPlots
 
-const t_end = 10.0 # simulation time
-const dt = 1.0 / se().sample_freq
+t_end = 10.0 # simulation time
+dt = 1.0 / se().sample_freq
 
 kcu = KCU(se())
 
-const times = Float64[]
-const depower = Float64[]
-const depower_set = Float64[]
-const steering = Float64[]
-const steering_set = Float64[]
-const rel_depower_offset = se().depower_offset/100.0
+times = Float64[]
+depower = Float64[]
+depower_set = Float64[]
+steering = Float64[]
+steering_set = Float64[]
+rel_depower_offset = se().depower_offset/100.0
 for step in 1:Int(round(t_end/dt))
     time = step * dt
     if step < 20
@@ -32,7 +32,7 @@ for step in 1:Int(round(t_end/dt))
     push!(steering, get_steering(kcu))
 end
 p = plotx(times, [depower, depower_set], [steering, steering_set]; ylabels=["depower","steering"], 
-          labels=[["depower","depower_set"], ["steering", "steering_set"]], fig="step_response")
+          labels=[["depower","depower_set"], ["steering", "steering_set"]], fig="step_response KCU1")
 display(p)
-savefig("docs/src/step_response.png")
-println("Saved step response in docs/src/step_response.png !")
+savefig("docs/src/step_response_kcu1.png")
+println("Saved step response in docs/src/step_response_kcu2.png !")
