@@ -20,7 +20,7 @@ Two P controllers are used.
 The geometric nonlinearity due to the change of the effective drum diameter of the drum with the depower tape is taken into account.
 
 ## Installation
-Follow the instructions at [Installation of Julia](https://github.com/aenarete/KiteSimulators.jl/blob/main/docs/Installation.md), using Julia 1.10 or later. Then you can add `KitePodModels` from  Julia's package manager, by typing 
+Follow the instructions at [Installation of Julia](https://ufechner7.github.io/2024/08/09/installing-julia-with-juliaup.html), using Julia 1.10 or later. Then you can add `KitePodModels` from  Julia's package manager, by typing 
 ```julia
 using Pkg
 pkg"add KitePodModels"
@@ -37,6 +37,21 @@ pkg"test KitePodModels"
 - functions to initialize the model, update the set values and read the actual values
 - a function KitePodModels.on_timer() that needs to be called once per time step
 - a function to convert the actual depower value into change of angle of attack
+
+### Configuration
+There are two types of kite control models, called KCU1 and KCU2. For KCU2 the following parameters are used:
+```yaml
+kcu:
+    kcu_model: "KCU2"              # name of the kite control unit model, KCU1 or KCU2
+    kcu_mass: 15.0                 # mass of the kite control unit                    [kg]
+    kcu_diameter: 0.4              # diameter of the KCU for drag calculation          [m]
+    depower_zero: 38.0             # depower setting for alpha_zero = 0                [%]
+    degrees_per_percent_power: 1.0 # linear approximation                      [degrees/%]
+    v_depower: 0.053  # max velocity of depowering in units per second (full range: 1 unit)
+    v_steering: 0.212 # max velocity of steering in units per second (full range: 2 units)
+    depower_gain: 3.0              # 3.0 means: more than 33% error -> full speed
+    steering_gain: 3.0
+```
 
 ## Nomenclature
 - depower: a value between 0% and 100%; zero corresponds to the power line being fully reeled-in
