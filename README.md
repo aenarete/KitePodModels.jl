@@ -75,6 +75,9 @@ kcu:
 - depower_offset: 23.6   # at rel_depower=0.236 the kite is fully powered [%]
 - alpha_depower: the change of the angle between the kite and the last tether segment [rad]
 
+## Testing
+Please, have a look at the four examples in the examples folder.
+
 ## Licence
 This project is licensed under the MIT License. Please see the below WAIVER in association with the license.
 
