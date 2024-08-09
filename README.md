@@ -39,7 +39,7 @@ pkg"test KitePodModels"
 - a function to convert the actual depower value into change of angle of attack
 
 ### Configuration
-There are two types of kite control models, called KCU1 and KCU2. 
+There are two types of kite control unit models, called KCU1 and KCU2. 
 For KCU1 the following parameters are used:
 ```yaml
 kcu:
