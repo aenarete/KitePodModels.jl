@@ -112,6 +112,8 @@ function calc_alpha_depower1(kcu::KCU, rel_depower)
 end
 
 function calc_alpha_depower2(kcu::KCU, rel_depower)
+    delta_depower = rel_depower - 0.01 * kcu.set.depower_zero
+    return 100 * delta_depower * deg2rad(kcu.set.degrees_per_percent_power)
 end
 
 """
