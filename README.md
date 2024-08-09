@@ -39,7 +39,23 @@ pkg"test KitePodModels"
 - a function to convert the actual depower value into change of angle of attack
 
 ### Configuration
-There are two types of kite control models, called KCU1 and KCU2. For KCU2 the following parameters are used:
+There are two types of kite control models, called KCU1 and KCU2. 
+For KCU1 the following parameters are used:
+```yaml
+kcu:
+    kcu_model: "KCU1"            # name of the kite control unit model, KCU1 or KCU2
+    kcu_mass: 8.4                # mass of the kite control unit                      [kg]
+    power2steer_dist: 1.3        #                                                     [m]
+    depower_drum_diameter: 0.069 #                                                     [m]
+    tape_thickness: 0.0006       #                                                     [m]
+    v_depower: 0.075 # max velocity of depowering in units per second (full range: 1 unit)
+    v_steering: 0.2  # max velocity of steering in units per second  (full range: 2 units)
+    depower_gain: 3.0            # 3.0 means: more than 33% error -> full speed
+    steering_gain: 3.0
+
+```
+
+For KCU2 the following parameters are used:
 ```yaml
 kcu:
     kcu_model: "KCU2"              # name of the kite control unit model, KCU1 or KCU2
