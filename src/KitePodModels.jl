@@ -79,6 +79,16 @@ actual rel_depower value.
 Returns `nothing` in case of error.
 """
 function calc_alpha_depower(kcu::KCU, rel_depower)
+    if kcu.set.kcu_model == "KCU1"
+        return calc_alpha_depower1(kcu, rel_depower)
+    elseif kcu.set.kcu_model == "KCU2"
+        return calc_alpha_depower2(kcu, rel_depower)
+    else
+        println("ERROR: unknown KCU model: $(kcu.set.kcu_model)")
+        return nothing
+    end
+end
+function calc_alpha_depower1(kcu::KCU, rel_depower)
     a   =  kcu.set.power2steer_dist
     b_0 = kcu.set.h_bridle + 0.5 * kcu.set.height_k
     b   = b_0 + 0.5 * calc_delta_l(kcu, rel_depower) # factor 0.5 due to the pulleys
@@ -99,6 +109,9 @@ function calc_alpha_depower(kcu::KCU, rel_depower)
         end            
         return pi/2.0 - acos(tmp)
     end
+end
+
+function calc_alpha_depower2(kcu::KCU, rel_depower)
 end
 
 """
