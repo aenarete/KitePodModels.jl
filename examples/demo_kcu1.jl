@@ -25,7 +25,7 @@ function plot_alpha_depower(kcu; rel_depower_min=0.22, rel_depower_max=0.60)
     for i in eachindex(α)
         α[i] = calc_alpha_depower(kcu, rel_depower[i])
     end
-    plot(rel_depower, rad2deg.(α); ylabel=L"α_{depower}~[°]", xlabel="rel_depower", fig="α = f(rel_depower)")  
+    plot(rel_depower, rad2deg.(α); ylabel=L"α_{depower}~[°]", xlabel="rel_depower", fig="KCU1")  
 end 
 
 plot_alpha_depower(kcu)
