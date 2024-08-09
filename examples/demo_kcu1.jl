@@ -4,10 +4,11 @@ if ! ("ControlPlots" ∈ keys(Pkg.project().dependencies))
 end
 using KitePodModels, ControlPlots, LaTeXStrings
 
-const t_end = 10.0 # simulation time
-const dt = 1.0 / se().sample_freq
+set = se()
 
-kcu = KCU(se())
+t_end = 10.0               # simulation time
+dt = 1.0 / set.sample_freq # sampling time
+kcu = KCU(set)
 
 rel_depower_min = 0.22
 rel_depower_max = 0.60
