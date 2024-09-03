@@ -6,7 +6,7 @@ using Reexport
 @reexport using KiteUtils
 using DocStringExtensions
 
-export calc_alpha_depower, init_kcu, set_depower_steering, get_depower, get_steering
+export calc_alpha_depower, init_kcu!, set_depower_steering, get_depower, get_steering
 export KCU
 
 if ! isfile(joinpath(get_data_path(), "settings.yaml"))
