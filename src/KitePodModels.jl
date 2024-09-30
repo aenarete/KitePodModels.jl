@@ -138,7 +138,7 @@ function get_depower(kcu::KCU);  return kcu.depower;  end
 """
     get_steering(kcu::KCU)
 
-Read the current depower value. Result will be between -1.0 and 1.0.
+Read the current steering value. Result will be between -1.0 and 1.0.
 """
 function get_steering(kcu::KCU); return kcu.steering; end
 
