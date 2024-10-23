@@ -8,6 +8,7 @@ set = se("system2.yaml")
 
 t_end = 10.0               # simulation time
 dt = 1.0 / set.sample_freq # sampling time
+step_size = 0.7
 kcu = KCU(set)
 
 times = Float64[]
@@ -23,9 +24,9 @@ for step in 1:Int(round(t_end/dt))
         push!(depower_set, rel_depower_offset)
         push!(steering_set, 0.0)
     else
-        set_depower_steering(kcu, rel_depower_offset+0.24, 0.5)
+        set_depower_steering(kcu, rel_depower_offset+0.24, step_size)
         push!(depower_set, rel_depower_offset+0.24)
-        push!(steering_set, 0.5)
+        push!(steering_set, step_size)
     end
     push!(times, time)
     KitePodModels.on_timer(kcu)
