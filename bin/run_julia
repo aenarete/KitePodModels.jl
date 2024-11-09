@@ -3,5 +3,6 @@
 if [[ $(basename $(pwd)) == "bin" ]]; then
     cd ..
 fi
+export JULIA_PKG_SERVER_REGISTRY_PREFERANCE=eager
 
 julia --project
