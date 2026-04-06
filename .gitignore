@@ -3,3 +3,10 @@
 *.jl.mem
 /docs/build/
 /Manifest.toml
+/.idea/.gitignore
+/.idea/julia-settings.xml
+/.idea/KitePodModels.jl.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
