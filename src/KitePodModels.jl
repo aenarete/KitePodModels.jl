@@ -29,7 +29,24 @@ end
 """
     KCU(set::KiteUtils.Settings)
 
-Constructor for KCU struct.
+Construct a new `KCU` instance from a `KiteUtils.Settings` object.
+
+The constructor allocates a `KCU` and calls [`init_kcu!`](@ref) so the internal
+state starts from a consistent configuration:
+- `set_depower` and `depower` are initialized from `set.depower_offset * 0.01`
+- `set_steering` and `steering` are initialized to `0.0`
+
+# Arguments
+- `set::KiteUtils.Settings`: Model and controller parameters for the KCU.
+
+# Returns
+- `KCU`: Initialized kite control unit model instance.
+
+# Example
+```julia
+set = load_settings("system.yaml")
+kcu = KCU(set)
+```
 """
 function KCU(set::KiteUtils.Settings)
     kcu = KCU(set = set)
