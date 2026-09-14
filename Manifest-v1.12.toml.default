@@ -292,7 +292,7 @@ version = "1.12.0"
 deps = ["DocStringExtensions", "KiteUtils", "Reexport"]
 path = "."
 uuid = "9de5dc81-f971-414a-927b-652b2f41c539"
-version = "0.4.1"
+version = "0.4.2"
 
 [[deps.KiteUtils]]
 deps = ["Arrow", "CSV", "DocStringExtensions", "LinearAlgebra", "OrderedCollections", "Parameters", "Parsers", "Pkg", "PrecompileTools", "RecursiveArrayTools", "ReferenceFrameRotations", "Rotations", "StaticArrays", "StructArrays", "StructTypes", "YAML"]
