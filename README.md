@@ -1,9 +1,9 @@
 # KitePodModels
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://aenarete.github.io/KitePodModels.jl/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://aenarete.github.io/KitePodModels.jl/dev)
-[![Build Status](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/aenarete/KitePodModels.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/aenarete/KitePodModels.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/aenarete/KitePodModels.jl)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://OpenSourceAWE.github.io/KitePodModels.jl/stable)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://OpenSourceAWE.github.io/KitePodModels.jl/dev)
+[![Build Status](https://github.com/OpenSourceAWE/KitePodModels.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/OpenSourceAWE/KitePodModels.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/OpenSourceAWE/KitePodModels.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/OpenSourceAWE/KitePodModels.jl)
 
 Models of control pods for kite power systems.
 
@@ -87,9 +87,9 @@ Technische Universiteit Delft hereby disclaims all copyright interest in the pac
 ## Related
 - The meta-package  [KiteSimulators](https://github.com/aenarete/KiteSimulators.jl)
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
-- the packages [KiteModels](https://github.com/ufechner7/KiteModels.jl) and [WinchModels](https://github.com/aenarete/WinchModels.jl) and [AtmosphericModels](https://github.com/aenarete/AtmosphericModels.jl)
-- the packages [KiteControllers](https://github.com/aenarete/KiteControllers.jl) and[KiteViewers](https://github.com/aenarete/KiteViewers.jl)
+- the packages [KiteModels](https://github.com/ufechner7/KiteModels.jl) and [WinchModels](https://github.com/aenarete/WinchModels.jl) and [AtmosphericModels](https://github.com/OpenSourceAWE/AtmosphericModels.jl)
+- the packages [KiteControllers](https://github.com/OpenSourceAWE/KiteControllers.jl) and[KiteViewers](https://github.com/OpenSourceAWE/KiteViewers.jl)
 
-**Documentation** [Stable Version](https://aenarete.github.io/KitePodModels.jl/stable) [Development Version](https://aenarete.github.io/KitePodModels.jl/dev)
+**Documentation** [Stable Version](https://OpenSourceAWE.github.io/KitePodModels.jl/stable) [Development Version](https://OpenSourceAWE.github.io/KitePodModels.jl/dev)
 
 Author: Uwe Fechner (uwe.fechner.msc@gmail.com)
