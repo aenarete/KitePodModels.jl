@@ -6,11 +6,11 @@ DocMeta.setdocmeta!(KitePodModels, :DocTestSetup, :(using KitePodModels); recurs
 makedocs(;
     modules=[KitePodModels],
     authors="Uwe Fechner <fechner@aenarete.eu> and contributors",
-    repo="https://github.com/aenarete/KitePodModels.jl/blob/{commit}{path}#{line}",
+    repo="https://github.com/OpenSourceAWE/KitePodModels.jl/blob/{commit}{path}#{line}",
     sitename="KitePodModels.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://aenarete.github.io/KitePodModels.jl",
+        canonical="https://OpenSourceAWE.github.io/KitePodModels.jl",
         assets=String[],
     ),
     pages=[
@@ -22,6 +22,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/aenarete/KitePodModels.jl",
+    repo="github.com/OpenSourceAWE/KitePodModels.jl",
     devbranch="main",
 )

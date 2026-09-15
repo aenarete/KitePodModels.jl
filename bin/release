@@ -81,8 +81,8 @@ fi
     echo ""
     echo "$release_notes"
 } | gh issue comment 1 \
-    --repo "aenarete/KitePodModels.jl" \
+    --repo "OpenSourceAWE/KitePodModels.jl" \
     --body-file -
 
 echo ""
-echo "Done! Registration comment posted to https://github.com/aenarete/KitePodModels.jl/issues/1"
+echo "Done! Registration comment posted to https://github.com/OpenSourceAWE/KitePodModels.jl/issues/1"

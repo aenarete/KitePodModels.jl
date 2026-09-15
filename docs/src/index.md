@@ -4,7 +4,7 @@ CurrentModule = KitePodModels
 
 # KitePodModels
 
-Documentation for [KitePodModels](https://github.com/aenarete/KitePodModels.jl).
+Documentation for [KitePodModels](https://github.com/OpenSourceAWE/KitePodModels.jl).
 
 ## Background
 A kite pod or kite control unit consists of one or two electric miniatur winches, that pull on two or three lines (attached to the kite) and allow to steer the kite and to change the angle of attack and thus the lift.
@@ -44,7 +44,7 @@ Click on **Functions** on the left to see the exported functions.
 ## Related
 - The meta package [KiteSimulators](https://github.com/aenarete/KiteSimulators.jl) which contains all packages from Julia Kite Power Tools.
 - the package [KiteUtils](https://github.com/ufechner7/KiteUtils.jl)
-- the packages [KiteModels](https://github.com/ufechner7/KiteModels.jl) and [WinchModels](https://github.com/aenarete/WinchModels.jl) and [AtmosphericModels](https://github.com/aenarete/AtmosphericModels.jl)
-- the packages [KiteControllers](https://github.com/aenarete/KiteControllers.jl) and[KiteViewers](https://github.com/aenarete/KiteViewers.jl)
+- the packages [KiteModels](https://github.com/ufechner7/KiteModels.jl) and [WinchModels](https://github.com/aenarete/WinchModels.jl) and [AtmosphericModels](https://github.com/OpenSourceAWE/AtmosphericModels.jl)
+- the packages [KiteControllers](https://github.com/OpenSourceAWE/KiteControllers.jl) and[KiteViewers](https://github.com/OpenSourceAWE/KiteViewers.jl)
 
 Author: Uwe Fechner (uwe.fechner.msc@gmail.com)
